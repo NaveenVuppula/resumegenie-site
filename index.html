@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeGenie — AI Resume Maker</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: #f8f9fb;
+            color: #2d3142;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #132240 50%, #0d2b4e 100%);
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(37, 99, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .hero-icon { font-size: 64px; margin-bottom: 20px; display: inline-block; }
+        .hero h1 {
+            font-size: 36px; font-weight: 800; color: #ffffff;
+            margin-bottom: 12px; letter-spacing: -0.5px;
+        }
+        .hero h1 span { color: #60A5FA; }
+        .hero p {
+            font-size: 17px; color: #8b9dc3; max-width: 520px; margin: 0 auto 24px;
+        }
+        .badges {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .badge {
+            padding: 8px 18px; border-radius: 20px; font-size: 13px;
+            font-weight: 600; color: #fff;
+        }
+        .badge-blue { background: rgba(59,130,246,0.25); border: 1px solid rgba(59,130,246,0.4); }
+        .badge-green { background: rgba(16,185,129,0.25); border: 1px solid rgba(16,185,129,0.4); }
+        .badge-purple { background: rgba(139,92,246,0.25); border: 1px solid rgba(139,92,246,0.4); }
+
+        .store-links {
+            display: flex; gap: 16px; justify-content: center;
+            margin-top: 28px; flex-wrap: wrap;
+        }
+        .store-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 28px; border-radius: 12px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; text-decoration: none; font-size: 14px; font-weight: 600;
+            transition: background 0.2s;
+        }
+        .store-btn:hover { background: rgba(255,255,255,0.18); }
+        .store-btn .store-icon { font-size: 24px; }
+
+        .container {
+            max-width: 720px; margin: -20px auto 40px;
+            padding: 0 20px; position: relative; z-index: 1;
+        }
+        .card {
+            background: #ffffff; border-radius: 16px; padding: 36px 32px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+            border: 1px solid #eef0f4;
+        }
+        .card h2 {
+            font-size: 20px; font-weight: 700; color: #0d2b4e;
+            margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+        }
+        .card h2 .icon { font-size: 22px; }
+        .card p { font-size: 15px; color: #4a5568; margin-bottom: 12px; }
+        .card p:last-child { margin-bottom: 0; }
+        .card ul { list-style: none; padding: 0; margin: 12px 0; }
+        .card ul li {
+            font-size: 15px; color: #4a5568;
+            padding: 8px 0 8px 28px; position: relative;
+            border-bottom: 1px solid #f4f5f7;
+        }
+        .card ul li:last-child { border-bottom: none; }
+        .card ul li::before {
+            content: '→'; position: absolute; left: 4px;
+            color: #2563EB; font-weight: 600;
+        }
+        strong { color: #2d3142; font-weight: 600; }
+        .footer {
+            text-align: center; padding: 30px 24px 40px;
+            color: #8b9dc3; font-size: 13px;
+        }
+        .footer a { color: #2563EB; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .nav-links {
+            display: flex; justify-content: center; gap: 12px;
+            margin-top: 12px; flex-wrap: wrap;
+        }
+        .nav-links a {
+            padding: 6px 14px; background: #f0f2f5; border-radius: 8px;
+            font-size: 13px; color: #4a5568; text-decoration: none; transition: background 0.2s;
+        }
+        .nav-links a:hover { background: #e2e8f0; }
+        @media (max-width: 600px) {
+            .card { padding: 24px 20px; }
+            .hero h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-icon">📄✨</div>
+        <h1>Resume<span>Genie</span></h1>
+        <p>AI-powered resume builder that tailors your resume to every job you apply for. Beat ATS. Land more interviews.</p>
+        <div class="badges">
+            <div class="badge badge-blue">✨ AI Tailoring</div>
+            <div class="badge badge-green">📊 ATS Score</div>
+            <div class="badge badge-purple">📄 10 Templates</div>
+        </div>
+        <div class="store-links">
+            <a href="#" class="store-btn">
+                <span class="store-icon">🍎</span> App Store
+            </a>
+            <a href="#" class="store-btn">
+                <span class="store-icon">▶️</span> Google Play
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2><span class="icon">🚀</span> How It Works</h2>
+            <ul>
+                <li><strong>Add your profile once</strong> — experience, education, skills, and summary</li>
+                <li><strong>Paste a job description</strong> — or import via URL or photo</li>
+                <li><strong>AI tailors your resume</strong> — keywords, skills, and experience matched to the job</li>
+                <li><strong>Get your ATS score</strong> — see how well you match with actionable suggestions</li>
+                <li><strong>Download & apply</strong> — export as a polished PDF and apply with confidence</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">⭐</span> Key Features</h2>
+            <ul>
+                <li><strong>AI Resume Tailoring</strong> — Paste any job description and get a customized resume in seconds</li>
+                <li><strong>ATS Score Analysis</strong> — Keyword match reports, missing keyword alerts, and improvement tips</li>
+                <li><strong>10 Professional Templates</strong> — Modern Clean, ATS Friendly, Two Column Pro, and more</li>
+                <li><strong>AI Cover Letters</strong> — Generate tailored cover letters for each application</li>
+                <li><strong>Smart Job Import</strong> — Paste a URL or photograph a job posting for auto-extraction</li>
+                <li><strong>Resume Import via OCR</strong> — Upload PDF or photo to auto-fill your profile</li>
+                <li><strong>Job Application Tracker</strong> — Track every application with status and notes</li>
+                <li><strong>PDF Export & Sharing</strong> — Professional formatting with meaningful filenames</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">👑</span> ResumeGenie Pro</h2>
+            <p>Upgrade to Pro to unlock 4 premium resume templates — Executive Dark, Creative Teal, India Biodata, and Tech Developer — plus unlimited AI tailoring features.</p>
+            <ul>
+                <li><strong>Monthly</strong> — $4.99/month</li>
+                <li><strong>Annual</strong> — $29.99/year (save 50%)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📬</span> Contact & Support</h2>
+            <p>Have questions, feedback, or need help? Reach out to us:</p>
+            <p><strong>Email:</strong> <a href="mailto:naveen90.v@gmail.com" style="color: #2563EB;">naveen90.v@gmail.com</a></p>
+            <p><strong>Developer:</strong> Naveen Vuppula</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 ResumeGenie by Naveen Vuppula. All rights reserved.</p>
+        <div class="nav-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+        </div>
+    </div>
+</body>
+</html>

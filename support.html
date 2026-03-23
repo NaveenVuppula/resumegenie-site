@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — ResumeGenie</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background: #f8f9fb; color: #2d3142; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .hero { background: linear-gradient(135deg, #0a1628 0%, #132240 50%, #0d2b4e 100%); padding: 60px 24px 50px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(37, 99, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%); pointer-events: none; }
+        .hero-icon { font-size: 48px; margin-bottom: 16px; display: inline-block; }
+        .hero h1 { font-size: 28px; font-weight: 700; color: #ffffff; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .hero p { font-size: 15px; color: #8b9dc3; max-width: 480px; margin: 0 auto; }
+        .container { max-width: 720px; margin: -20px auto 40px; padding: 0 20px; position: relative; z-index: 1; }
+        .card { background: #ffffff; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04); border: 1px solid #eef0f4; }
+        .card h2 { font-size: 20px; font-weight: 700; color: #0d2b4e; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 22px; }
+        .card p { font-size: 15px; color: #4a5568; margin-bottom: 12px; }
+        .card p:last-child { margin-bottom: 0; }
+        .card ul { list-style: none; padding: 0; margin: 12px 0; }
+        .card ul li { font-size: 15px; color: #4a5568; padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #f4f5f7; }
+        .card ul li:last-child { border-bottom: none; }
+        .card ul li::before { content: '→'; position: absolute; left: 4px; color: #2563EB; font-weight: 600; }
+        .highlight-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+        .highlight-box p { color: #1e40af; font-weight: 500; font-size: 14px; margin: 0; }
+        .faq-q { font-size: 15px; font-weight: 700; color: #0d2b4e; margin-bottom: 6px; margin-top: 16px; }
+        .faq-a { font-size: 15px; color: #4a5568; margin-bottom: 4px; }
+        strong { color: #2d3142; font-weight: 600; }
+        .contact-btn {
+            display: inline-block; padding: 12px 28px; background: #2563EB; color: #fff;
+            border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px;
+            margin-top: 12px; transition: background 0.2s;
+        }
+        .contact-btn:hover { background: #1D4ED8; }
+        .footer { text-align: center; padding: 30px 24px 40px; color: #8b9dc3; font-size: 13px; }
+        .footer a { color: #2563EB; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .nav-links { display: flex; justify-content: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+        .nav-links a { padding: 6px 14px; background: #f0f2f5; border-radius: 8px; font-size: 13px; color: #4a5568; text-decoration: none; transition: background 0.2s; }
+        .nav-links a:hover { background: #e2e8f0; }
+        @media (max-width: 600px) { .card { padding: 24px 20px; } .hero h1 { font-size: 24px; } }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-icon">💬</div>
+        <h1>Support</h1>
+        <p>ResumeGenie — AI Resume Maker by Naveen Vuppula</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2><span class="icon">📬</span> Contact Us</h2>
+            <p>Need help with ResumeGenie? We're here to assist you. Reach out to us and we'll respond as soon as possible.</p>
+            <p><strong>Email:</strong> <a href="mailto:naveen90.v@gmail.com" style="color: #2563EB;">naveen90.v@gmail.com</a></p>
+            <p><strong>Developer:</strong> Naveen Vuppula</p>
+            <p><strong>Response time:</strong> Usually within 24-48 hours</p>
+            <a href="mailto:naveen90.v@gmail.com?subject=ResumeGenie Support Request" class="contact-btn">📧 Email Support</a>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">❓</span> Frequently Asked Questions</h2>
+
+            <div class="faq-q">How does AI resume tailoring work?</div>
+            <div class="faq-a">Paste a job description (or import via URL/photo), and our AI analyzes the requirements, then tailors your resume content — including your summary, skills, and experience bullets — to match the specific job. You get an ATS compatibility score showing how well you match.</div>
+
+            <div class="faq-q">What is an ATS score?</div>
+            <div class="faq-a">An ATS (Applicant Tracking System) score measures how well your resume keywords match the job description. Most companies use ATS software to filter resumes before a human sees them. ResumeGenie helps you score higher by identifying matched and missing keywords.</div>
+
+            <div class="faq-q">Is my data safe?</div>
+            <div class="faq-a">Yes. All data is stored securely using AWS (Amazon Web Services) with encryption at rest and in transit. We never sell your data or show ads. See our <a href="privacy-policy.html" style="color: #2563EB;">Privacy Policy</a> for full details.</div>
+
+            <div class="faq-q">How do I import my existing resume?</div>
+            <div class="faq-a">Go to Profile → Import from Resume. You can upload a PDF file, take a photo of your resume, or select an image from your gallery. Our OCR technology reads the document and auto-fills your profile fields.</div>
+
+            <div class="faq-q">What's included in ResumeGenie Pro?</div>
+            <div class="faq-a">Pro unlocks 4 premium resume templates (Executive Dark, Creative Teal, India Biodata, Tech Developer) and unlimited AI tailoring features. Available as Monthly ($4.99/mo) or Annual ($29.99/yr).</div>
+
+            <div class="faq-q">How do I cancel my subscription?</div>
+            <div class="faq-a">On iPhone: Settings → Apple ID → Subscriptions → ResumeGenie → Cancel. On Android: Google Play → Subscriptions → ResumeGenie → Cancel. You'll keep Pro access until the end of your current billing period.</div>
+
+            <div class="faq-q">Can I use the app without a subscription?</div>
+            <div class="faq-a">Absolutely! The free version includes 6 resume templates, AI tailoring, ATS scoring, cover letter generation, job tracking, and PDF export. Pro is optional and adds premium templates.</div>
+
+            <div class="faq-q">How do I delete my account?</div>
+            <div class="faq-a">Go to Profile → Delete Account. This permanently removes your account, all resumes, cover letters, and job applications. This action cannot be undone.</div>
+
+            <div class="faq-q">The app is crashing or not loading. What should I do?</div>
+            <div class="faq-a">Try these steps: (1) Force close and reopen the app, (2) Check your internet connection, (3) Update to the latest version from the App Store or Google Play, (4) Restart your device. If the issue persists, email us with your device model and OS version.</div>
+
+            <div class="faq-q">Can I use the same account on multiple devices?</div>
+            <div class="faq-a">Yes! Sign in with the same credentials on any device. Your profile, resumes, and applications sync across all devices. Pro subscriptions are also restored when you sign in.</div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">💡</span> Tips for Best Results</h2>
+            <ul>
+                <li><strong>Complete your profile fully</strong> — the more detail you add, the better AI can tailor your resume</li>
+                <li><strong>Paste the full job description</strong> — longer descriptions give AI more to work with for keyword matching</li>
+                <li><strong>Review AI-generated content</strong> — always verify facts, dates, and claims before submitting</li>
+                <li><strong>Try different templates</strong> — some industries prefer traditional formats, others prefer modern designs</li>
+                <li><strong>Use the ATS score</strong> — aim for 80+ to maximize your chances of getting past automated screening</li>
+                <li><strong>Track your applications</strong> — use the tracker to stay organized and follow up at the right time</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🐛</span> Report a Bug</h2>
+            <p>Found something that isn't working right? Help us improve by sending a bug report to:</p>
+            <p><a href="mailto:naveen90.v@gmail.com?subject=ResumeGenie Bug Report" style="color: #2563EB;">naveen90.v@gmail.com</a></p>
+            <div class="highlight-box">
+                <p>ℹ️ Please include: your device model, OS version, a description of the issue, and screenshots if possible. This helps us fix issues faster.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 ResumeGenie by Naveen Vuppula. All rights reserved.</p>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>
