@@ -186,5 +186,50 @@
             <a href="support.html">Support</a>
         </div>
     </div>
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">&uarr;</button>
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 28px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #2563EB;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 246, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateY(10px);
+            z-index: 999;
+        }
+        #scrollTopBtn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scrollTopBtn:hover {
+            background: #1D4ED8;
+            transform: translateY(-2px);
+        }
+    </style>
+    <script>
+        (function() {
+            var btn = document.getElementById("scrollTopBtn");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    btn.classList.add("visible");
+                } else {
+                    btn.classList.remove("visible");
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
